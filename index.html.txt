@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodo Auditores Independentes | Consultoria e Auditoria Contábil</title>
+    
+    <!-- Bootstrap CSS 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts (Roboto e Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Estilos Customizados -->
+    <style>
+        :root {
+            --primary-color: #0d233a; /* Azul Marinho Profundo */
+            --secondary-color: #c59b27; /* Dourado/Bronze Elegante */
+            --accent-color: #1a3c5e;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-text);
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Top Bar Contact Info */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+
+        .top-bar a {
+            color: #d1d1d1;
+            text-decoration: none;
+        }
+
+        .top-bar a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand span {
+            color: var(--secondary-color);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 35, 58, 0.85), rgba(13, 35, 58, 0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 120px 0 100px;
+        }
+
+        .hero h1 {
+            font-weight: 800;
+            font-size: 2.8rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        /* Custom Buttons */
+        .btn-primary-custom {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #a8831f;
+            border-color: #a8831f;
+            color: #ffffff;
+        }
+
+        .btn-outline-custom {
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: #ffffff;
+            color: var(--primary-color);
+        }
+
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Service Cards */
+        .service-card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Features / Differentials */
+        .feature-box {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Info Institutional Box */
+        .info-box {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid #e9ecef;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 60px 0 20px;
+        }
+
+        footer h5 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        footer a {
+            color: #cccccc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #aaaaaa;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar py-2 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fa-solid fa-location-dot me-2 text-warning"></i> Santo Amaro, Recife - PE | 
+                <i class="fa-solid fa-id-card ms-3 me-2 text-warning"></i> CRC: PE-002174/O
+            </div>
+            <div>
+                <a href="tel:81996806034" class="me-3"><i class="fa-solid fa-phone me-1"></i> (81) 99680-6034</a>
+                <a href="mailto:raiane@tmaenergiasolar.com"><i class="fa-solid fa-envelope me-1"></i> raiane@tmaenergiasolar.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                METHODO <span>AUDITORES</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">A Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#transparencia">Transparência</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero d-flex align-items-center">
+        <div class="container text-center text-lg-start">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-bold text-uppercase">Soluções Corporativas & Auditoria</span>
+                    <h1>Precisão Financeira e Segurança para o seu Negócio</h1>
+                    <p class="mt-3 mb-4">A Methodo Auditores Independentes oferece consultoria, assessoria empresarial e gestão contábil estratégica com rigor técnico e conformidade fiscal.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <a href="https://wa.me/5581996806034" target="_blank" class="btn btn-primary-custom">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Falar com Especialista
+                        </a>
+                        <a href="#servicos" class="btn btn-outline-custom">Nossos Serviços</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-5">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3" style="color: var(--primary-color);">Methodo Auditores Independentes</h2>
+                    <p class="lead text-muted">Tradição, conformidade e inteligência de mercado a serviço da sua empresa.</p>
+                    <p>Com registro ativo sob o <strong>CRC PE-002174/O</strong>, a <strong>Methodo Consultoria Assessoria Empresarial LTDA</strong> é uma instituição consolidada, atuando com excelência desde 2017 no mercado pernambucano e regional.</p>
+                    <p>Especializada em auditoria contábil, consultoria tributária e gestão empresarial, nossa equipe atua com rigor ético e soluções personalizadas que apoiam a tomada de decisões estratégicas e garantem o pleno cumprimento das obrigações fiscais.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-check-circle text-warning fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Optante do Simples</h6>
+                                    <small class="text-muted">Eficiência tributária</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-award text-warning fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Registro CRC</h6>
+                                    <small class="text-muted">Certificação Ativa</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="info-box shadow-sm">
+                        <h4 class="fw-bold mb-4" style="color: var(--primary-color);"><i class="fa-solid fa-building me-2"></i>Corpo Diretivo & Sócios</h4>
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fa-solid fa-user-tie fs-4 text-warning me-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Marcelo Cardona Sobral</h6>
+                                <p class="text-muted mb-0">Sócio-Administrador</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fa-solid fa-user-tie fs-4 text-warning me-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Clovis Pinto Ferreira Junior</h6>
+                                <p class="text-muted mb-0">Sócio</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bg-white p-3 rounded border">
+                            <small class="text-muted d-block">Razão Social:</small>
+                            <span class="fw-bold text-dark">Methodo Consultoria Assessoria Empresarial LTDA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços (CNAEs) -->
+    <section id="servicos" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="text-center section-title">Nossas Áreas de Atuação</h2>
+            <p class="text-center text-muted mb-5">Atendimento completo em conformidade com as normas regulamentares vigentes.</p>
+
+            <div class="row g-4">
+                <!-- Serviço 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Consultoria e Auditoria</h5>
+                        <p class="text-muted small">Auditoria contábil e tributária especializada para garantir conformidade e mitigar riscos operacionais.</p>
+                        <small class="text-secondary fw-bold mt-auto">CNAE 69.20-6-02</small>
+                    </div>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Gestão Empresarial</h5>
+                        <p class="text-muted small">Consultoria em gestão estratégica para otimização de processos e desenvolvimento sustentável do negócio.</p>
+                        <small class="text-secondary fw-bold mt-auto">CNAE 70.20-4-00</small>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Serviços Contábeis</h5>
+                        <p class="text-muted small">Rotinas contábeis completas, elaboração de demonstrações financeiras e apuração de impostos.</p>
+                        <small class="text-secondary fw-bold mt-auto">CNAE 69.20-6-01</small>
+                    </div>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Apoio Administrativo</h5>
+                        <p class="text-muted small">Serviços combinados de escritório e suporte administrativo estratégico para rotinas corporativas.</p>
+                        <small class="text-secondary fw-bold mt-auto">CNAE 82.11-3-00</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="py-5">
+        <div class="container py-4">
+            <h2 class="text-center section-title">Por que escolher a Methodo?</h2>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-shield-halved fs-2 text-warning mb-3"></i>
+                        <h5 class="fw-bold">Segurança e Rigor Técnico</h5>
+                        <p class="text-muted mb-0">Atuação pautada pela transparência e estrita observância às normas da Receita Federal e do Conselho de Contabilidade.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-user-gear fs-2 text-warning mb-3"></i>
+                        <h5 class="fw-bold">Atendimento Personalizado</h5>
+                        <p class="text-muted mb-0">Análise detalhada das particularidades de cada cliente para entregar soluções tributárias e contábeis sob medida.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-lightbulb fs-2 text-warning mb-3"></i>
+                        <h5 class="fw-bold">Visão Estratégica</h5>
+                        <p class="text-muted mb-0">Transformamos dados contábeis em inteligência para o crescimento rentável e seguro da sua empresa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparência / Dados Cadastrais -->
+    <section id="transparencia" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="text-center section-title">Informações Institucionais</h2>
+            <p class="text-center text-muted mb-5">Transparência pública e dados de registro empresarial.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="table-responsive bg-white rounded shadow-sm p-4">
+                        <table class="table table-borderless align-middle mb-0">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="text-secondary" style="width: 30%;"><i class="fa-solid fa-file-invoice me-2"></i>CNPJ:</th>
+                                    <td class="fw-bold">28.301.277/0001-73</td>
+                                </tr>
+                                <tr class="border-top">
+                                    <th scope="row" class="text-secondary"><i class="fa-solid fa-signature me-2"></i>Razão Social:</th>
+                                    <td>Methodo Consultoria Assessoria Empresarial LTDA</td>
+                                </tr>
+                                <tr class="border-top">
+                                    <th scope="row" class="text-secondary"><i class="fa-solid fa-tag me-2"></i>Nome Fantasia:</th>
+                                    <td>Methodo Auditores Independentes</td>
+                                </tr>
+                                <tr class="border-top">
+                                    <th scope="row" class="text-secondary"><i class="fa-solid fa-registered me-2"></i>Registro Conselho (CRC):</th>
+                                    <td><span class="badge bg-success">PE-002174/O</span></td>
+                                </tr>
+                                <tr class="border-top">
+                                    <th scope="row" class="text-secondary"><i class="fa-solid fa-building-flag me-2"></i>Natureza Jurídica:</th>
+                                    <td>Sociedade Empresária Limitada (Porte: EPP)</td>
+                                </tr>
+                                <tr class="border-top">
+                                    <th scope="row" class="text-secondary"><i class="fa-solid fa-percent me-2"></i>Regime Tributário:</th>
+                                    <td>Optante pelo Simples Nacional</td>
+                                </tr>
+                                <tr class="border-top">
+                                    <th scope="row" class="text-secondary"><i class="fa-solid fa-coins me-2"></i>Capital Social:</th>
+                                    <td>R$ 100.000,00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Localização -->
+    <section id="contato" class="py-5">
+        <div class="container py-4">
+            <h2 class="text-center section-title">Fale Conosco</h2>
+            <p class="text-center text-muted mb-5">Estamos prontos para atender a sua empresa. Agende uma reunião.</p>
+
+            <div class="row g-4">
+                <!-- Informações de Contato -->
+                <div class="col-lg-5">
+                    <div class="bg-white p-4 rounded shadow-sm border h-100">
+                        <h4 class="fw-bold mb-4" style="color: var(--primary-color);">Canais de Atendimento</h4>
+                        
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="btn-warning rounded-circle p-3 me-3 text-dark">
+                                <i class="fa-solid fa-phone fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1 fw-bold">Telefones / WhatsApp</h6>
+                                <p class="mb-0"><a href="https://wa.me/5581996806034" class="text-decoration-none text-dark">(81) 99680-6034</a></p>
+                                <p class="mb-0"><a href="https://wa.me/5581999872704" class="text-decoration-none text-dark">(81) 99987-2704</a></p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="btn-warning rounded-circle p-3 me-3 text-dark">
+                                <i class="fa-solid fa-envelope fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1 fw-bold">E-mail Corporativo</h6>
+                                <p class="mb-0"><a href="mailto:raiane@tmaenergiasolar.com" class="text-decoration-none text-dark">raiane@tmaenergiasolar.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="btn-warning rounded-circle p-3 me-3 text-dark">
+                                <i class="fa-solid fa-location-dot fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1 fw-bold">Endereço</h6>
+                                <p class="mb-0 text-muted">
+                                    Rua Aluisio de Azevedo, 200 - Sala 0306<br>
+                                    Emp. Jose Borba Maranhao - Cx pst 15<br>
+                                    Santo Amaro, Recife - PE<br>
+                                    CEP: 50100-090
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa / Formulário -->
+                <div class="col-lg-7">
+                    <div class="bg-white p-4 rounded shadow-sm border h-100">
+                        <h4 class="fw-bold mb-4" style="color: var(--primary-color);">Localização</h4>
+                        <!-- Mapa Incorporado do Google Maps -->
+                        <div class="ratio ratio-16x9 rounded overflow-hidden mb-3">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.5638421869917!2d-34.88725832418385!3d-8.04387808033282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab189255a2a229%3A0x6a2ebf53cb478641!2sRua%20Alu%C3%ADsio%20de%20Azevedo%2C%20200%20-%20Santo%20Amaro%2C%20Recife%20-%20PE%2C%2050100-090!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                                width="600" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <a href="https://maps.google.com/?q=Rua+Aluisio+de+Azevedo,+200,+Santo+Amaro,+Recife+-+PE" target="_blank" class="btn btn-outline-secondary btn-sm w-100">
+                            <i class="fa-solid fa-map-location-dot me-2"></i>Abrir no Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <h5 class="fw-bold">Methodo Auditores Independentes</h5>
+                    <p class="small text-muted-footer">A Methodo Consultoria Assessoria Empresarial LTDA oferece soluções em auditoria, consultoria tributária e apoio administrativo com compromisso, ética e precisão técnica.</p>
+                    <p class="small mb-0"><strong>CRC:</strong> PE-002174/O</p>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5>Navegação</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#inicio">Início</a></li>
+                        <li class="mb-2"><a href="#sobre">A Empresa</a></li>
+                        <li class="mb-2"><a href="#servicos">Serviços</a></li>
+                        <li class="mb-2"><a href="#transparencia">Transparência Cadastral</a></li>
+                        <li class="mb-2"><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5>Endereço de Correspondência</h5>
+                    <p class="small text-muted-footer mb-1">Methodo Auditores Independentes</p>
+                    <p class="small text-muted-footer mb-0">Rua Aluisio de Azevedo, 200, Sala 0306</p>
+                    <p class="small text-muted-footer mb-0">Santo Amaro - Recife/PE - CEP 50100-090</p>
+                </div>
+            </div>
+
+            <div class="text-center footer-bottom">
+                <p class="mb-0">&copy; Methodo Consultoria Assessoria Empresarial LTDA. Todos os direitos reservados. CNPJ: 28.301.277/0001-73.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5581996806034" class="whatsapp-float" target="_blank" title="Fale pelo WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS (com Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
